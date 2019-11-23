@@ -1,0 +1,60 @@
+extends layout
+
+block content 
+    br
+    h2 Registro de Personajes
+    form(action='/registrar' method='POST')
+        label(for="nombre") Nombre: 
+        input(type='text' name='nombre' placeholder='Nombre del personaje')
+        br
+        br
+        label(for="apellido") Apellido: 
+        input(type='text' name='apellido' placeholder='Apellido del personaje')
+        br
+        br
+        label(for="asiste") asiste a Hogwarts:
+        input(type="checkbox" name="asiste" id="asiste_check")
+        br
+        br
+        label(for="muggle") Es un muggle?:
+        input(type='checkbox' name='muggle' id="muggle_check") 
+        <br>
+        <br>
+        button(type='submit') Guardar
+
+    
+    hr
+
+
+    h2 Mostrar un personaje 
+    form(action='/show' method='GET')
+        label(for="buscar") Buscar a:
+        input(type='text' name='nombre' placeholder='Buscar personaje')
+        button(type='submit') Buscar  
+    br
+    hr
+
+    h2 Mostrar todos los personajes 
+    form(action='/showall' method='GET')
+        label(for="buscar") Mostrar todo:
+        button(type='submit') Buscar 
+    br
+    hr
+
+    h2 Actualizar datos de un personaje
+       form(action='/update' method='PUT')
+        label(for="update") Actualizar a:
+        input(type='text' name='nombre' placeholder='Actualizar  personaje')
+        button(type='submit') Actualizar
+
+    br
+    hr
+
+
+    h2 Borrar un personaje 
+        form(action='/delete' method='DELETE')
+         label(for="delete") Eliminar a:
+        input(type='text' name='nombre' placeholder='Elimina un personaje')
+        button(type='submit') Eliminar
+    
+
